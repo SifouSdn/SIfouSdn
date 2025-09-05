@@ -1,6 +1,6 @@
 # 👋 Hi, I’m Seif-Allah Saidoun
 
-🎓 I’m a 4th-year engineering student at the **National Higher School of Artificial Intelligence (ENSIA), Algiers**, pursuing a state-certified degree in **Artificial Intelligence and Data Science**.
+🎓 I’m a final year engineering student at the **National Higher School of Artificial Intelligence (ENSIA), Algiers**, pursuing a state-certified degree in **Artificial Intelligence and Data Science**.
 
 💡 My interests lie at the intersection of **AI**, **Natural Language Processing**, **Computer Vision**, and **Cybersecurity**. I’m passionate about building intelligent systems that solve real-world problems and make technology more accessible, secure, and impactful.
 
@@ -16,7 +16,7 @@
 📫 Feel free to reach out for collaborations, internships, or hackathon teams:
 - ✉️ Email: seif-allah.saidoun@ensia.edu.dz
 - 🔗 [LinkedIn](https://www.linkedin.com/in/seif-allah-saidoun-116646246/)
-- 🗂️ [My CV (Google Drive)](https://drive.google.com/file/d/17UcvOP5gufI9ZXPbKZiNhunlT0ZLjsB7/view?usp=drive_link)
+- 🗂️ [My CV (Google Drive)](https://drive.google.com/file/d/1nQ4lWlMYhyxP_coLlIaNFc5cUjGd5BfP/view?usp=sharing)
 
 ---
 
