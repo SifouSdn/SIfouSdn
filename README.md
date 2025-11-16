@@ -16,7 +16,7 @@
 📫 Feel free to reach out for collaborations, internships, or hackathon teams:
 - ✉️ Email: seif-allah.saidoun@ensia.edu.dz
 - 🔗 [LinkedIn](https://www.linkedin.com/in/seif-allah-saidoun-116646246/)
-- 🗂️ [My CV (Google Drive)](https://drive.google.com/file/d/1nQ4lWlMYhyxP_coLlIaNFc5cUjGd5BfP/view?usp=sharing)
+- 🗂️ [My CV (Google Drive)](https://drive.google.com/file/d/1tGIgZcI6YAAYHIK7jrbFJfdOqB1X-iZA/view?usp=drive_link)
 
 ---
 
