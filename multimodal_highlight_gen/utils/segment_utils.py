@@ -9,6 +9,9 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+# Constants for segment adjustment
+CENTER_ADJUSTMENT_FACTOR = 2  # Factor for centering excess duration reduction
+
 
 @dataclass
 class HighlightSegment:
@@ -141,8 +144,8 @@ def _create_segment(
     # Enforce max duration
     if end_time - start_time > max_duration:
         excess = (end_time - start_time) - max_duration
-        start_time += excess / 2
-        end_time -= excess / 2
+        start_time += excess / CENTER_ADJUSTMENT_FACTOR
+        end_time -= excess / CENTER_ADJUSTMENT_FACTOR
 
     # Calculate contributions
     audio_contribution = 0.0

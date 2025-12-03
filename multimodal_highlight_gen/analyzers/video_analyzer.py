@@ -54,6 +54,10 @@ class VideoAnalyzer:
         "neutral",
     ]
 
+    # Constants for emotion estimation
+    BASE_EMOTION_STRENGTH = 0.5
+    EMOTION_VARIANCE = 0.3
+
     INTENSE_EMOTIONS = ["happy", "surprise", "angry", "fear"]
 
     def __init__(
@@ -106,7 +110,11 @@ class VideoAnalyzer:
         # Try to load face cascade classifier
         if self._cv2 is not None and self._face_detector is None:
             try:
-                cascade_path = self._cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
+                import os
+                cascade_path = os.path.join(
+                    self._cv2.data.haarcascades,
+                    "haarcascade_frontalface_default.xml"
+                )
                 self._face_detector = self._cv2.CascadeClassifier(cascade_path)
             except Exception as e:
                 logger.warning(f"Could not load face detector: {e}")
@@ -326,9 +334,14 @@ class VideoAnalyzer:
                 emotions[emotion] = max(0, 1.0 - expressiveness)
             elif emotion in self.intense_emotions:
                 # Intense emotions more likely with high expressiveness
-                emotions[emotion] = expressiveness * (0.5 + np.random.random() * 0.3)
+                emotions[emotion] = expressiveness * (
+                    self.BASE_EMOTION_STRENGTH
+                    + np.random.random() * self.EMOTION_VARIANCE
+                )
             else:
-                emotions[emotion] = expressiveness * np.random.random() * 0.3
+                emotions[emotion] = (
+                    expressiveness * np.random.random() * self.EMOTION_VARIANCE
+                )
 
         # Normalize to sum to 1
         total = sum(emotions.values())

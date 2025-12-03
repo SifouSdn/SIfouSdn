@@ -35,6 +35,10 @@ class FusionResult:
     confidence: np.ndarray
 
 
+# Constants for fusion algorithms
+ATTENTION_TEMPERATURE = 2.0  # Temperature scaling for attention-based fusion
+
+
 class MultimodalFusionEngine:
     """
     Fuses multimodal signals for highlight detection.
@@ -227,7 +231,7 @@ class MultimodalFusionEngine:
 
         # Compute softmax attention weights per timestep
         # Higher scoring modalities get more weight
-        exp_scores = np.exp(stacked * 2)  # Temperature scaling
+        exp_scores = np.exp(stacked * ATTENTION_TEMPERATURE)
         attention_weights = exp_scores / (
             np.sum(exp_scores, axis=0, keepdims=True) + 1e-8
         )
