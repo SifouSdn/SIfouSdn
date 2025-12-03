@@ -1,0 +1,20 @@
+# Multimodal Highlight Generation - Requirements
+# Core dependencies
+numpy>=1.21.0
+
+# Audio analysis
+librosa>=0.9.0
+soundfile>=0.10.0
+
+# Video analysis
+opencv-python>=4.5.0
+
+# Text analysis / NLP
+transformers>=4.20.0
+torch>=1.12.0
+
+# Video processing (for export)
+moviepy>=1.0.3
+
+# Optional: For better performance
+scipy>=1.7.0
