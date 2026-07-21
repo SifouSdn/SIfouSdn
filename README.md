@@ -52,11 +52,7 @@ I'm an AI & Data Science engineer — State Engineering Diploma + Master's, **EN
 
 ### GitHub Stats
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=SifouSdn&show_icons=true&theme=default&hide_border=true&count_private=true" height="165" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=SifouSdn&layout=compact&hide_border=true" height="165" />
-</p>
-
+[![Anurag's GitHub stats](https://github-stats-extended.vercel.app/api?username=SifouSdn)](https://github.com/stats-organization/github-stats-extended)
 ---
 
 ### Let's Connect
