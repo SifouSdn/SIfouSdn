@@ -1,5 +1,5 @@
 <h1 align="center">Hi, I'm Seif-Allah Saidoun 👋</h1>
-<h3 align="center">AI & Data Science Engineer — ENSIA (Very Good Honor) · Multimodal ML · RAG · Secure GenAI Systems</h3>
+<h3 align="center">AI & Data Science Engineer — ENSIA (Mention Très Bien) · Multimodal ML · RAG · Secure GenAI Systems</h3>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/seif-allah-saidoun-116646246/">
