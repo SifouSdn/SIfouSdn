@@ -1,0 +1,166 @@
+# Example configurations for different training scenarios
+
+# ==========================================
+# Small-scale Configuration (for testing)
+# ==========================================
+# data_path: './data/mosi'
+# max_seq_len: 50
+# audio_dim: 74
+# visual_dim: 35
+# text_dim: 300
+# d_model: 64
+# nhead: 4
+# num_layers: 2
+# dropout: 0.1
+# batch_size: 8
+# num_epochs: 10
+# learning_rate: 0.001
+# weight_decay: 0.01
+# grad_clip: 1.0
+# optimizer: 'adamw'
+# scheduler: 'cosine'
+# num_workers: 2
+# log_dir: './logs'
+# checkpoint_dir: './checkpoints'
+# log_interval: 10
+# save_interval: 5
+# resume_checkpoint: null
+# seed: 42
+
+# ==========================================
+# Medium-scale Configuration (for development)
+# ==========================================
+# data_path: './data/mosi'
+# max_seq_len: 50
+# audio_dim: 74
+# visual_dim: 35
+# text_dim: 300
+# d_model: 128
+# nhead: 8
+# num_layers: 4
+# dropout: 0.1
+# batch_size: 16
+# num_epochs: 50
+# learning_rate: 0.0005
+# weight_decay: 0.01
+# grad_clip: 1.0
+# optimizer: 'adamw'
+# scheduler: 'cosine'
+# num_workers: 4
+# log_dir: './logs'
+# checkpoint_dir: './checkpoints'
+# log_interval: 10
+# save_interval: 10
+# resume_checkpoint: null
+# seed: 42
+
+# ==========================================
+# Large-scale Configuration (for production/HPC)
+# Target CCC: 0.68-0.72
+# ==========================================
+# data_path: './data/mosi'
+# max_seq_len: 50
+# audio_dim: 74
+# visual_dim: 35
+# text_dim: 300
+# d_model: 256
+# nhead: 8
+# num_layers: 6
+# dropout: 0.2
+# batch_size: 32
+# num_epochs: 100
+# learning_rate: 0.0001
+# weight_decay: 0.01
+# grad_clip: 1.0
+# optimizer: 'adamw'
+# scheduler: 'cosine'
+# num_workers: 8
+# log_dir: './logs'
+# checkpoint_dir: './checkpoints'
+# log_interval: 10
+# save_interval: 10
+# resume_checkpoint: null
+# seed: 42
+
+# ==========================================
+# Multi-GPU Configuration (4+ GPUs)
+# Batch size per GPU should be adjusted
+# ==========================================
+# data_path: './data/mosi'
+# max_seq_len: 50
+# audio_dim: 74
+# visual_dim: 35
+# text_dim: 300
+# d_model: 256
+# nhead: 8
+# num_layers: 6
+# dropout: 0.2
+# batch_size: 64  # Will be split across GPUs
+# num_epochs: 100
+# learning_rate: 0.0002  # Scaled for larger effective batch size
+# weight_decay: 0.01
+# grad_clip: 1.0
+# optimizer: 'adamw'
+# scheduler: 'cosine'
+# num_workers: 8
+# log_dir: './logs'
+# checkpoint_dir: './checkpoints'
+# log_interval: 10
+# save_interval: 10
+# resume_checkpoint: null
+# seed: 42
+
+# ==========================================
+# Fine-tuning Configuration
+# Resume from a checkpoint
+# ==========================================
+# data_path: './data/mosi'
+# max_seq_len: 50
+# audio_dim: 74
+# visual_dim: 35
+# text_dim: 300
+# d_model: 128
+# nhead: 8
+# num_layers: 4
+# dropout: 0.1
+# batch_size: 32
+# num_epochs: 150  # Continue training
+# learning_rate: 0.00005  # Lower learning rate for fine-tuning
+# weight_decay: 0.01
+# grad_clip: 1.0
+# optimizer: 'adamw'
+# scheduler: 'step'
+# step_size: 20
+# gamma: 0.5
+# num_workers: 4
+# log_dir: './logs'
+# checkpoint_dir: './checkpoints'
+# log_interval: 10
+# save_interval: 10
+# resume_checkpoint: './checkpoints/best_model.pt'  # Resume from checkpoint
+# seed: 42
+
+# ==========================================
+# Tips for Hyperparameter Tuning
+# ==========================================
+# 
+# Model Architecture:
+# - d_model: [64, 128, 256, 512] - larger = more capacity but slower
+# - nhead: [4, 8, 16] - must divide d_model evenly
+# - num_layers: [2, 4, 6, 8] - more layers = deeper model
+# - dropout: [0.1, 0.2, 0.3] - higher for larger models to prevent overfitting
+#
+# Training:
+# - batch_size: [8, 16, 32, 64] - larger = faster but more memory
+# - learning_rate: [0.0001, 0.0005, 0.001] - lower for fine-tuning
+# - weight_decay: [0.0, 0.01, 0.1] - regularization strength
+# - grad_clip: [0.5, 1.0, 5.0] - prevents gradient explosion
+#
+# Optimization:
+# - optimizer: 'adam' or 'adamw' (adamw recommended)
+# - scheduler: 'cosine' (smooth decay) or 'step' (periodic decay)
+#
+# For multi-GPU training:
+# - Scale learning rate linearly with number of GPUs
+# - Increase batch size proportionally
+# - Ensure batch_size is divisible by number of GPUs
